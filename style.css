@@ -246,9 +246,11 @@ body.light .theme-toggle .moon {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    line-height: 1.1;
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    line-height: 1;
     margin-bottom: 24px;
+    letter-spacing: -3px !important;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
 }
 
 .hero-title span {
@@ -268,8 +270,8 @@ body.light .theme-toggle .moon {
 }
 
 .btn {
-    padding: 14px 28px;
-    border-radius: var(--radius);
+    padding: 16px 36px;
+    border-radius: 100px;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
@@ -312,8 +314,10 @@ body.light .theme-toggle .moon {
     border-color: rgba(var(--accent-rgb), 0.8);
 }
 
-
-BENTO GRID (PROJECTS/INFO) .section-head {
+/* ═══════════════════════════════════════════════════
+   BENTO GRID (PROJECTS/INFO)
+═══════════════════════════════════════════════════ */
+.section-head {
     margin-bottom: 48px;
 }
 
@@ -887,4 +891,4 @@ body.light .blur-btn {
 /* Ensure icons are visible in light mode */
 body.light .social-icon {
     background: #f1f5f9;
-}
+}
