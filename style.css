@@ -196,7 +196,44 @@ body.light .theme-toggle .moon {
 #home {
     min-height: 100vh;
     padding-top: var(--nav-h);
+    position: relative;
+    background-color: #030712;
+    background-image: 
+        linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.cyber-corner {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgba(0, 229, 255, 0.2);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.top-left { top: 40px; left: 40px; border-right: none; border-bottom: none; }
+.top-right { top: 40px; right: 40px; border-left: none; border-bottom: none; }
+.bottom-left { bottom: 40px; left: 40px; border-right: none; border-top: none; }
+.bottom-right { bottom: 40px; right: 40px; border-left: none; border-top: none; }
+
+.cyber-corner::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.top-left::before { top: -2px; left: -2px; }
+.top-right::before { top: -2px; right: -2px; }
+.bottom-left::before { bottom: -2px; left: -2px; }
+.bottom-right::before { bottom: -2px; right: -2px; }
 
 .container {
     width: 100%;
@@ -246,11 +283,24 @@ body.light .theme-toggle .moon {
 }
 
 .hero-title {
-    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-size: clamp(3.5rem, 12vw, 6.5rem);
     line-height: 1;
-    margin-bottom: 24px;
-    letter-spacing: -3px !important;
-    text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+    letter-spacing: -2px !important;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 3vw, 1.4rem);
+    color: #00e5ff !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
 }
 
 .hero-title span {
@@ -266,7 +316,38 @@ body.light .theme-toggle .moon {
 
 .hero-btns {
     display: flex;
-    gap: 16px;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.hero-btns .btn-hero-primary {
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.hero-btns .btn-hero-primary:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+.hero-btns .btn-hero-secondary {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hero-btns .btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .btn {
